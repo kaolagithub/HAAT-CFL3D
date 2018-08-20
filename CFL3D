@@ -1,0 +1,9 @@
+Q：
+缺少 -ip编译选项
+A：
+Install文件中 去掉 -ip编译选项
+
+Q：
+PGF90-S-0023-Syntax error - unbalanced parentheses (cgnstools.F: 1744)
+PGF90-S-0023-Syntax error - unbalanced parentheses (cgnstools.F: 1758)
+A：
