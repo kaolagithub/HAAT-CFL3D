@@ -1,3 +1,21 @@
+1,能编译通过的版本
+修改 Install文件中
+linux_compiler_flags="default"
+为：
+linux_compiler_flags="PG"
+
+在  if [ $linux_compiler_flags = PG ]; then 中去掉
+LFLAG="-Wl,-Bstatic"
+
+修改 build.sh 
+./Install #-cgnsdir=../../cgns
+
+2，其他
+不修改 build.sh 
+./Install -cgnsdir=../../cgns
+
+
+
 Q：
 缺少 -ip编译选项
 A：
@@ -7,3 +25,11 @@ Q：
 PGF90-S-0023-Syntax error - unbalanced parentheses (cgnstools.F: 1744)
 PGF90-S-0023-Syntax error - unbalanced parentheses (cgnstools.F: 1758)
 A：
+
+
+Q：
+/usr/bin/ld: cannot find -lm
+A：
+在  if [ $linux_compiler_flags = PG ]; then 中
+去掉
+LFLAG="-Wl,-Bstatic"
