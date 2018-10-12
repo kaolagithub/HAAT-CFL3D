@@ -33,3 +33,10 @@ A：
 在  if [ $linux_compiler_flags = PG ]; then 中
 去掉
 LFLAG="-Wl,-Bstatic"
+
+Q：
+open读写错误
+A：
+格式不匹配，window文本和linux文本换行符不一致，导致读写文件名错误
+批量替换：
+sed -i 's/\r//'  filename
